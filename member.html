@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Members Only | TRS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-hero">
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="assets/TRS_supra.png" alt="TRS Logo" class="logo" />
+      <a href="index.html" class="back-link">← メインページへ戻る</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- ログインパネル -->
+    <section id="loginPanel" class="card">
+      <h2>Members Only</h2>
+      <p>パスワードを入力してください。</p>
+      <input type="password" id="memberPass" placeholder="メンバーパスワード" />
+      <button id="memberLoginBtn" class="btn primary">ログイン</button>
+    </section>
+
+    <!-- ログイン後ダッシュボード -->
+    <section id="dashboard" class="card hidden">
+      <div class="dash-header">
+        <h2>TRS Members Dashboard</h2>
+        <button id="logoutBtn" class="btn ghost">ログアウト</button>
+      </div>
+
+      <!-- 管理者ログイン -->
+      <div class="subcard">
+        <h3>管理者ログイン</h3>
+        <input type="password" id="adminPass" placeholder="管理者パスワード" />
+        <button id="adminLoginBtn" class="btn danger">管理者ログイン</button>
+      </div>
+
+      <!-- 掲示板リセット（管理者のみ） -->
+      <div id="resetBbsBlock" class="subcard hidden">
+        <h3>掲示板 全リセット</h3>
+        <p>掲示板の投稿と番号カウンタをすべて削除します（管理者専用）。</p>
+        <button id="resetBbsBtn" class="btn danger">掲示板を全リセット</button>
+      </div>
+
+      <!-- タブ -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="formTab">投稿フォーム</button>
+        <button class="tab-btn" data-tab="listTab">投稿一覧</button>
+      </div>
+
+      <!-- 投稿フォーム -->
+      <div id="formTab" class="tab-content">
+        <form id="postForm">
+          <label>タイプ
+            <select id="postType">
+              <option value="latest">最新情報</option>
+              <option value="news">ニュース</option>
+              <option value="schedule">レーススケジュール</option>
+              <option value="machine">マシン情報</option>
+              <option value="gallery">ギャラリー</option>
+            </select>
+          </label>
+
+          <label>タイトル
+            <input type="text" id="postTitle" placeholder="タイトルを入力" />
+          </label>
+
+          <label>説明
+            <textarea id="postBody" rows="4" placeholder="説明を入力"></textarea>
+          </label>
+
+          <label>日付（空欄で現在時刻）
+            <input type="text" id="postDate" placeholder="例: 7/27 18:28" />
+          </label>
+
+          <label>画像（任意）
+            <input type="file" id="postImage" accept="image/*" />
+          </label>
+
+          <input type="hidden" id="editId" />
+          <button type="submit" class="btn primary">投稿する / 更新する</button>
+        </form>
+      </div>
+
+      <!-- 投稿一覧 -->
+      <div id="listTab" class="tab-content hidden">
+        <label>表示：
+          <select id="filterType">
+            <option value="all">すべて</option>
+            <option value="latest">最新情報</option>
+            <option value="news">ニュース</option>
+            <option value="schedule">レーススケジュール</option>
+            <option value="machine">マシン情報</option>
+            <option value="gallery">ギャラリー</option>
+          </select>
+        </label>
+        <div id="adminPostList" class="post-admin-list empty-msg">投稿はありません。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 TRS Racing Team.</p>
+    <p>本サイトはポリフォニー・デジタル / トヨタ自動車とは無関係です。</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

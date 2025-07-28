@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TRS公式サイト | Toyota Racing Supra</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-hero">
+  <!-- ============ Header ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="assets/TRS_supra.png" alt="TRS Logo" class="logo" />
+      <button id="hamburger" class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ Drawer ============ -->
+  <nav id="drawer" class="drawer">
+    <button id="drawerClose" class="drawer-close" aria-label="Close menu">✕</button>
+    <ul class="drawer-links">
+      <li><a href="#top">トップ</a></li>
+      <li><a href="#latest">最新情報</a></li>
+      <li><a href="#news">ニュース</a></li>
+      <li><a href="#schedule">レーススケジュール</a></li>
+      <li><a href="#machine">マシン情報</a></li>
+      <li><a href="#gallery">ギャラリー</a></li>
+      <li><a href="#bbs">掲示板</a></li>
+      <li><a href="member.html">メンバーONLY</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ MAIN ============ -->
+  <main id="top" class="main">
+    <!-- ヒーロー -->
+    <section class="hero">
+      <h1 class="hero-title">TRS - Toyota Racing Supra</h1>
+      <p class="hero-sub">情熱で駆け抜ける、最速の挑戦。</p>
+    </section>
+
+    <!-- 最新情報 -->
+    <section id="latest" class="card section">
+      <h2>最新情報</h2>
+      <div id="latestList" class="post-list empty-msg">最新情報は未登録です。</div>
+    </section>
+
+    <!-- ニュース -->
+    <section id="news" class="card section">
+      <h2>ニュース</h2>
+      <div id="newsList" class="post-list empty-msg">ニュースは未登録です。</div>
+    </section>
+
+    <!-- レーススケジュール -->
+    <section id="schedule" class="card section">
+      <h2>レーススケジュール</h2>
+      <div id="scheduleList" class="post-list empty-msg">スケジュールは未登録です。</div>
+    </section>
+
+    <!-- マシン情報 -->
+    <section id="machine" class="card section">
+      <h2>マシン情報</h2>
+      <div id="machineList" class="post-list empty-msg">マシン情報は未登録です。</div>
+    </section>
+
+    <!-- ギャラリー -->
+    <section id="gallery" class="card section">
+      <h2>ギャラリー</h2>
+      <div id="galleryList" class="gallery-grid empty-msg">ギャラリーは未登録です。</div>
+    </section>
+
+    <!-- 掲示板（ログイン時のみ表示） -->
+    <section id="bbs" class="card section">
+      <h2>メンバー掲示板</h2>
+
+      <div id="bbsLock" class="locked">
+        掲示板はログイン後に表示されます（<a href="member.html">メンバーONLYへ</a>）。
+      </div>
+
+      <div id="bbsArea" class="hidden">
+        <ol id="bbsList" class="bbs-list empty-msg">まだ投稿がありません。</ol>
+
+        <form id="bbsForm" class="bbs-form">
+          <input type="text" id="bbsName" placeholder="名前（未入力は名無し）" />
+          <textarea id="bbsBody" placeholder="メッセージを入力" rows="4"></textarea>
+          <button type="submit" class="btn primary">送信</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact" class="card section">
+      <h2>お問い合わせ</h2>
+      <p>
+        お問い合わせは以下までお願いします：<br />
+        <a href="mailto:tsukaa61@gmail.com">tsukaa61@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <p>© 2025 TRS Racing Team.</p>
+    <p>本サイトはポリフォニー・デジタル / トヨタ自動車とは無関係です。</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
